@@ -35,15 +35,10 @@ function getStocks(APIkey) {
 };
 //fx handles the ajax call before using data in 2nd fx
 //duplicate this and change 2nd fx to manipulate obj differently
-async function init() {
+async function displayStocks() {
     let stockObj = await getStocks(key);
     getSearchedStock(stockObj);
 }
 
-function parameterStr(array) {
-    let finalStr = array.toString();
-    return finalStr;
-};
-
 //click events
-$symbolSearchBtn.on("click", init);
+$symbolSearchBtn.on("click", displayStocks);
